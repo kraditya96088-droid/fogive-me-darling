@@ -301,7 +301,7 @@ p {
 
   </div>
     <!-- Music continues on all sections/pages -->
-  <audio id="bgMusic" autoplay loop playsinline>
+  <audio id="bgMusic"loop playsinline>
     <source src="music.mp3" type="audio/mpeg">
   </audio></main>  <script>
     const btn = document.getElementById('btn');
@@ -340,5 +340,9 @@ p {
       reveal.style.display = 'block';
       btn.textContent = i === messages.length - 1 ? 'Send My Love' : 'Next Sweet Line';
     });
+    window.addEventListener('load', () => {
+  music.play();
+  musicBtn.innerText = '💖 Music Playing';
+});
   </script></body>
 </html>
