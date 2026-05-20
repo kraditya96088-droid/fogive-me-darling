@@ -333,14 +333,31 @@ p {
       music.play();
       musicBtn.innerText = '💖 Music Playing';
     });
+    let opened = false;
 
-    btn.addEventListener('click', () => {
-      i = (i + 1) % messages.length;
-      msg.textContent = messages[i];
-      card.classList.add('show');
-      reveal.style.display = 'block';
-      btn.textContent = i === messages.length - 1 ? 'Send My Love' : 'Next Sweet Line';
-    });
+btn.addEventListener('click', () => {
+
+  if (!opened) {
+    i = (i + 1) % messages.length;
+    msg.textContent = messages[i];
+
+    card.classList.add('show');
+    reveal.style.display = 'block';
+
+    btn.textContent = '← Back';
+    opened = true;
+
+  } else {
+
+    msg.textContent = 'Tap the button for a sweet message.';
+    reveal.style.display = 'none';
+
+    btn.textContent = 'Open My Heart';
+    opened = false;
+  }
+
+});
+    
     window.addEventListener('load', () => {
   music.play();
   musicBtn.innerText = '💖 Music Playing';
