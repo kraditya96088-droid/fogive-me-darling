@@ -302,9 +302,13 @@ p {
 
   </div>
     <!-- Music continues on all sections/pages -->
-  <audio id="bgMusic" autoplay loop playsinline></audio>
-  <source src="music.mp3" type="audio/mpeg"></audio>
+ <audio id="bgMusic" autoplay loop playsinline>
+   <source src="music.mp3" type="audio/mpeg">
+</audio>
+  
 </main>  <script>
+  const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
     <div class="message" id="msg">Tap the button for a sweet message.</div>
 
 <button class="btn" id="btn">Open My Heart</button>
@@ -338,10 +342,13 @@ btn.addEventListener('click', () => {
   }
 
 });
-    
-    window.addEventListener('load', () => {
-  music.play();
-  musicBtn.innerText = '💖 Music Playing';
+    musicBtn.addEventListener("click",()=>{
+
+   music.play();
+
+   musicBtn.innerText="💖 Music Playing";
+
 });
+   
   </script></body>
 </html>
