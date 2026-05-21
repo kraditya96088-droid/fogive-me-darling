@@ -305,34 +305,15 @@ p {
   <audio id="bgMusic" autoplay loop playsinline></audio>
   <source src="music.mp3" type="audio/mpeg"></audio>
 </main>  <script>
-    const btn = document.getElementById('btn');
-    const music = document.getElementById('bgMusic');
-    const musicBtn = document.getElementById('musicBtn');
-    
-    const msg = document.getElementById('msg');
-    const card = document.getElementById('card');
-    const reveal = document.getElementById('reveal');
+    <div class="message" id="msg">Tap the button for a sweet message.</div>
 
-    const messages = [
-      "I'm truly sorry. You deserve kindness, not pain.",
-      "My heart is asking for one more chance to be better.",
-      "I never wanted to hurt you. Please forgive me.",
-      "You are precious to me, and I want to fix this."
-    ];
+<button class="btn" id="btn">Open My Heart</button>
+<button class="back-btn" id="backBtn" style="display:none;">← Back</button>
 
-    let i = 0;
-    function openMemories() {
-      document.getElementById('memoryPage').style.display = 'block';
-    }
-
-    function closeMemories() {
-      document.getElementById('memoryPage').style.display = 'none';
-    }
-
-    musicBtn.addEventListener('click', () => {
-      music.play();
-      musicBtn.innerText = '💖 Music Playing';
-    });
+<div class="reveal" id="reveal">
+  You matter to me more than my pride.
+  I care, I miss you, and I want to make things right. 💞
+</div>
     let opened = false;
 
 btn.addEventListener('click', () => {
