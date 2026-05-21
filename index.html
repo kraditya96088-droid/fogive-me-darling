@@ -307,48 +307,67 @@ p {
 </audio>
   
 </main>  <script>
-  const music = document.getElementById("bgMusic");
+const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
-    <div class="message" id="msg">Tap the button for a sweet message.</div>
 
-<button class="btn" id="btn">Open My Heart</button>
-<button class="back-btn" id="backBtn" style="display:none;">← Back</button>
+const btn = document.getElementById("btn");
+const msg = document.getElementById("msg");
+const card = document.getElementById("card");
+const reveal = document.getElementById("reveal");
 
-<div class="reveal" id="reveal">
-  You matter to me more than my pride.
-  I care, I miss you, and I want to make things right. 💞
-</div>
-    let opened = false;
+const memoryPage = document.getElementById("memoryPage");
 
-btn.addEventListener('click', () => {
+const messages = [
+ "You are my favorite person 💖",
+ "I miss your smile 🥺",
+ "You mean everything to me 💞",
+ "Please forgive me ❤️"
+];
 
-  if (!opened) {
-    i = (i + 1) % messages.length;
-    msg.textContent = messages[i];
+let i=-1;
+let opened=false;
 
-    card.classList.add('show');
-    reveal.style.display = 'block';
+btn.addEventListener("click",()=>{
 
-    btn.textContent = '← Back';
-    opened = true;
+ if(!opened){
 
-  } else {
+   i=(i+1)%messages.length;
+   msg.textContent=messages[i];
 
-    msg.textContent = 'Tap the button for a sweet message.';
-    reveal.style.display = 'none';
+   reveal.style.display="block";
 
-    btn.textContent = 'Open My Heart';
-    opened = false;
-  }
+   btn.textContent="← Back";
+
+   opened=true;
+
+ }else{
+
+   msg.textContent="Tap the button for a sweet message.";
+   reveal.style.display="none";
+
+   btn.textContent="Open My Heart";
+
+   opened=false;
+ }
 
 });
-    musicBtn.addEventListener("click",()=>{
 
-   music.play();
 
-   musicBtn.innerText="💖 Music Playing";
+function openMemories(){
+ memoryPage.style.display="block";
+}
+
+function closeMemories(){
+ memoryPage.style.display="none";
+}
+
+
+musicBtn.addEventListener("click",()=>{
+
+ music.play();
+
+ musicBtn.innerText="💖 Music Playing";
 
 });
-   
   </script></body>
 </html>
